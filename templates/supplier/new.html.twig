@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'supplier_new'|trans|raw}}{% endblock %}
+
+{% block body %}
+
+<div class="page_form_heading">
+    {{'supplier_new'|trans|raw}}
+    <div class="return_to_list_label">
+        <a href="{{ path('supplier_index') }}" title="{{'back_to_list'|trans|raw}}"><i class="fas fa-undo page_icon"></i></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        {{ include('supplier/_form.html.twig') }}
+    </div>
+</div>
+
+{% endblock %}

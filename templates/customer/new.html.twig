@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'customer_new'|trans|raw}}{% endblock %}
+
+{% block body %}
+
+<div style="height:450px;">
+    <div class="page_form_heading">{{'customer_new'|trans|raw}}
+    <a class="return_to_list_label" href="{{ path('customer_index') }}" title="{{'back_to_list'|trans|raw}}">
+    <i class="fas fa-undo page_icon"></i></a>
+    </div>
+    {{ include('customer/_form.html.twig') }}
+</div>
+{% endblock %}

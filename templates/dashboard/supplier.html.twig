@@ -1,0 +1,29 @@
+{% block body %}
+<div class="dashboard_title">
+    {{'dashboard.title.suppliers'|trans|raw}}  
+    <a class="return_to_list_label" href="{{ path('supplier_index') }}" title="Details"><i class="fas fa-file-alt page_icon"></i></a>
+</div>
+
+<div class="dashboard_table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for supplier in suppliers %}
+            <tr><td>{{ supplier.name }}</td>
+                <td class="return_to_list_label">
+                        <a href="{{ path('supplier_show', {'id': supplier.id}) }}" title="View"><i class="far fa-eye dashboard_icon"></i></a>
+                        <a href="{{ path('supplier_edit', {'id': supplier.id}) }}" title="Edit"><i class="fa fa-edit dashboard_icon"></i></a>
+                    </td>
+            </tr>
+        {% else %}
+          {%include 'no_dashboard_records_found.php' %}    
+        {% endfor %}
+        </tbody>
+    </table> 
+</div>
+{% endblock %}
